@@ -1,0 +1,26 @@
+
+Physical topology:
+===================
+
+    [junos-mx]--et-0/0/2------0/0/0/14--[xr-ncs5508]
+    [junos-mx]--et-0/0/5------0/0/0/15--[xr-ncs5508]
+
+Logical Topology:
+==================
+
+       AS4                   AS2        AS1                        AS5 
+               81.4.4.4                           81.10.10.10
+                  RR1     13.21.0.13  13.21.0.21   RR2 
+                   |          J           C        |
+      CE1--PE1----P1--------ASBR1-------ASBR2------P2------PE2------CE2 
+                                           |                |
+                                           +-------P3-------+
+                                                81.19.19.19
+        81.2.2.2         81.5.5.5    81.14.14.14           81.11.11.11
+
+
+
+      ASBR2 is XR.
+      ASBR1 is MX default logical-system.
+      All other nodes are logical-systems on MX.
+
